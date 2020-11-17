@@ -12,6 +12,8 @@ module Person: PersonType = {
     name: string,
   };
 
+  // THe module type hides this
   let massage = name => name |> String.capitalize |> String.trim;
+
   let make = (id, name) => {id, name: massage(name)};
 };
