@@ -13,7 +13,7 @@ module Person: PersonType = {
   };
 
   // THe module type hides this
-  let massage = name => name |> String.capitalize |> String.trim;
+  let massage = name => name |> String.capitalize_ascii |> String.trim;
 
   let make = (id, name) => {id, name: massage(name)};
 };

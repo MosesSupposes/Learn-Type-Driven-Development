@@ -6,7 +6,7 @@ var $$String = require("bs-platform/lib/js/string.js");
 function make(id, name) {
   return {
           id: id,
-          name: $$String.trim($$String.capitalize(name))
+          name: $$String.trim($$String.capitalize_ascii(name))
         };
 }
 
