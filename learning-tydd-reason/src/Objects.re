@@ -1,3 +1,4 @@
+// The `_as _;` syntax gets rid of a compiler warning saying that `this` is unused.
 let bob = {as _; pub id = 1; pub name = "Bob"}; /* (1), (2) */
 
 let greet =
