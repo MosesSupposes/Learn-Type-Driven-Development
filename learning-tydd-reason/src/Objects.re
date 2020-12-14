@@ -14,7 +14,8 @@ let greet =
 let jim = {
   pub id = 2;
   pub name = "Jim";
-  pub sayHi = "Hi, my name is " ++ this#name /* (4) */
+  pub sayHi = "Hi, my name is " ++ this#name; /* (4) */
+  pri sayBye = "bye"
 };
 
 Js.log(greet(jim));

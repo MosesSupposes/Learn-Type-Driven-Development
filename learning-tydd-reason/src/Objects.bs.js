@@ -45,15 +45,18 @@ var $$class$1 = CamlinternalOO.create_table([
 
 var ids$1 = CamlinternalOO.get_method_labels($$class$1, [
       "sayHi",
+      "sayBye",
       "name",
       "id"
     ]);
 
 var sayHi = ids$1[0];
 
-var name$1 = ids$1[1];
+var sayBye = ids$1[1];
 
-var id$1 = ids$1[2];
+var name$1 = ids$1[2];
+
+var id$1 = ids$1[3];
 
 CamlinternalOO.set_methods($$class$1, [
       id$1,
@@ -67,6 +70,10 @@ CamlinternalOO.set_methods($$class$1, [
       sayHi,
       (function (self$2) {
           return "Hi, my name is " + Curry._1(self$2[0][name$1], self$2);
+        }),
+      sayBye,
+      (function (self$2) {
+          return "bye";
         })
     ]);
 
