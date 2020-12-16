@@ -1,6 +1,6 @@
 /* src/Ch06/Ch06_Ref.re */
 // Imperative version
-let tryFind = (needle, haystack) => {
+let tryFind = (needle: 'a => bool, haystack: list('a)): option('a) => {
   let currHaystack = ref(haystack);
   let stop = ref(false);
   let currItem = ref(None);
@@ -19,7 +19,7 @@ let tryFind = (needle, haystack) => {
 };
 
 // Recursive, functional version
-let rec tryFindRec = (needle, haystack) => {
+let rec tryFindRec = (needle: 'a => bool, haystack: list('a)): option('a) => {
   switch (haystack) {
   | [] => None
   | [item, ..._items] when needle(item) => Some(item)
