@@ -6,22 +6,19 @@ let tryFind = (needle, haystack) => {
   let currItem = ref(None);
 
   while (! stop^) {
-    /* (1) */
     switch (currHaystack^) {
-    /* (2) */
     | [item, ..._items] when needle(item) =>
-      /* (3) */
       stop := true;
       currItem := Some(item);
-    | [_item, ...items] => currHaystack := items /* (4) */
-    | [] => stop := true /* (5) */
+    | [_item, ...items] => currHaystack := items
+    | [] => stop := true
     };
   };
 
-  currItem^; /* (6) */
+  currItem^;
 };
 
-// Recursive, declarative version
+// Recursive, functional version
 let rec tryFindRec = (needle, haystack) => {
   switch (haystack) {
   | [] => None
@@ -30,5 +27,5 @@ let rec tryFindRec = (needle, haystack) => {
   };
 };
 
-Js.log(tryFind(item => item === 2, [1, 2, 3, 4, 5]));
-Js.log(tryFindRec(item => item === 2, [1, 2, 3, 4, 5]));
+Js.log(tryFind(item => item === 2, [1, 2, 3, 4, 5])); // 2
+Js.log(tryFindRec(item => item === 2, [1, 2, 3, 4, 5])); // 2
